@@ -459,4 +459,12 @@ footer a {
   .hero article {
     height: 30%;
   }
+  
+  .scores {
+    width: 50%;
+  }
+  
+  .weather {
+    width: 50%;
+  }
 }
