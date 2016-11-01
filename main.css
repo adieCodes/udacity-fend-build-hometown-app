@@ -280,40 +280,31 @@ main {
   padding-top: 1em;
 }
 
-.scores__table {
+.results {
   width: 100%;
   border-collapse: collapse;
 }
 
-.scores__table th,
-.scores__table td {
+.results th,
+.results td {
   padding: 1em;
 }
 
-.scores__table th {
+.results th {
   color: #fff;
   font-weight: 300;
   background-color: #78909C;
 }
 
-.scores__table tr:nth-child(odd) td {
+.results tr:nth-child(odd) td {
   background-color: #fff;
 }
 
-.scores__table tr:nth-child(even) td {
+.results tr:nth-child(even) td {
   background-color: #eceff1;
 }
 
-.scores__table td.winner {
-  font-weight: bold;
-}
-
-.scores__table td:nth-child(3) {
-  text-align: right;
-}
-
-.scores__table td:nth-child(2),
-.scores__table td:nth-child(5) {
+.results td {
   text-align: center;
 }
 
@@ -438,4 +429,10 @@ footer a {
   padding: 1rem;
   min-width: 48px;
   min-height: 48px;
+}
+
+@media screen and (max-width: 480px) {
+  .hide {
+    display: none;
+  }
 }
