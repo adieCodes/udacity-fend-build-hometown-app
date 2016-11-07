@@ -405,6 +405,19 @@ footer a {
   .results .hide {
     display: table-cell;
   }
+
+  .weather {
+    display: flex;
+  }
+
+  .weather__current {
+    width: 33%;
+  }
+
+  .weather__next {
+    width: 66%;
+    align-self: center;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -424,11 +437,4 @@ footer a {
     height: 35%;
   }
 
-  .scores {
-    width: 50%;
-  }
-
-  .weather {
-    width: 50%;
-  }
 }
