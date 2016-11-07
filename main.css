@@ -392,7 +392,6 @@ footer a {
 }
 
 @media screen and (min-width: 450px) {
-
   .header__logo-container {
     width: 106px;
   }
@@ -400,19 +399,22 @@ footer a {
   .header__title {
     font-size: 3em;
   }
-
 }
 
 @media screen and (min-width: 480px) {
-
   .results .hide {
     display: table-cell;
   }
+}
 
+@media screen and (min-width: 750px) {
+  .hero,
+  .top-news {
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 850px) {
-
   body {
     width: 850px;
     margin: 0 auto;
