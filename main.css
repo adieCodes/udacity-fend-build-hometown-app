@@ -391,10 +391,24 @@ footer a {
   min-height: 48px;
 }
 
+@media screen and (min-width: 450px) {
+
+  .header__logo-container {
+    width: 106px;
+  }
+
+  .header__title {
+    font-size: 3em;
+  }
+
+}
+
 @media screen and (min-width: 480px) {
+
   .results .hide {
     display: table-cell;
   }
+
 }
 
 @media screen and (min-width: 850px) {
@@ -416,4 +430,3 @@ footer a {
     width: 50%;
   }
 }
-*/
