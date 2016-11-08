@@ -427,6 +427,10 @@ footer a {
   .top-news {
     width: 50%;
   }
+
+  .hero .hide {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -452,8 +456,5 @@ footer a {
     margin: 0 auto;
   }
 
-  .hero .hide {
-    display: none;
-  }
 
 }
