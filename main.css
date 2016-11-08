@@ -7,7 +7,7 @@ body, html {
 
 body {
   font-family: Roboto;
-  font-size: 12px;
+  font-size: 16px;
   color: #424242;
 }
 
@@ -166,7 +166,7 @@ main {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   bottom: 0;
-  height: 48%;
+  line-height: 2em;
   width: 100%;
   color: #fff;
   padding: 1em;
@@ -399,6 +399,11 @@ footer a {
 }
 
 @media screen and (min-width: 480px) {
+
+  .hero .hide {
+    display: block;
+  }
+
   .results .hide {
     display: table-cell;
   }
@@ -447,8 +452,8 @@ footer a {
     margin: 0 auto;
   }
 
-  .hero article {
-    height: 35%;
+  .hero .hide {
+    display: none;
   }
 
 }
