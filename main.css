@@ -1,3 +1,7 @@
+/* TODO: Add hamburger menu */
+/* TODO: Change layout for .recent-news */
+/* TODO: Test different max-width's for large viewports */
+
 body, html {
   margin: 0;
   padding: 0;
@@ -451,6 +455,7 @@ footer a {
 }
 
 @media screen and (min-width: 850px) {
+
   body {
     width: 850px;
     margin: 0 auto;
