@@ -97,6 +97,34 @@ ul {
 .nav {
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+}
+
+.nav__toggle {
+  height: 60px;
+  line-height: 60px;
+}
+
+.nav__toggle .open-menu {
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 45px;
+  padding: 5px 15px 0px 15px;
+  cursor: pointer;
+}
+
+.nav__toggle .close-menu {
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 54px;
+  padding: 5px 18px 5px 15px;
+  cursor: pointer;
 }
 
 .nav__list {
@@ -392,6 +420,28 @@ footer a {
   min-height: 48px;
 }
 
+@media screen and (max-width: 380px) {
+  .nav__item {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav__item a {
+    display: block;
+    padding-right: 2.5rem;
+    text-align: right;
+    border-bottom: 1px solid gray;
+  }
+}
+
+/*@media screen and (min-width: 381px) {
+  .open-menu {
+    display: none;
+  }
+
+}*/
+
 @media screen and (min-width: 450px) {
   .header__logo-container {
     width: 106px;
@@ -460,6 +510,5 @@ footer a {
     width: 850px;
     margin: 0 auto;
   }
-
 
 }
