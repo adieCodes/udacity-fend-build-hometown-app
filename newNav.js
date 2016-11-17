@@ -4,7 +4,7 @@
   var viewportWidth = $(window).innerWidth();
 
   // Checks viewport width
-  function hamburgerMenu(viewportWidth){
+  (function hamburgerMenu(viewportWidth){
     if(viewportWidth < 381){
       // add icons if less equal to or less than 380px
       var hamburgerMenuContent = '<div class="nav__toggle">'+
@@ -24,6 +24,5 @@
         $('button.close-menu').addClass('hide');
       })
     };
-  };
-  hamburgerMenu(viewportWidth);
+  })(viewportWidth);
 }(window.jQuery, window, document));
