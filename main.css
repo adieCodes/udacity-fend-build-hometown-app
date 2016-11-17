@@ -421,6 +421,17 @@ footer a {
 }
 
 @media screen and (max-width: 380px) {
+  .nav__list.hide {
+    display: block;
+    max-height: 0px;
+    transition: max-height 0.8s ease;
+  }
+
+  .nav__list.show {
+    max-height: 500px;
+    transition: max-height 0.8s ease;
+  }
+
   .nav__item {
     display: block;
     width: 100%;
@@ -434,13 +445,6 @@ footer a {
     border-bottom: 1px solid gray;
   }
 }
-
-/*@media screen and (min-width: 381px) {
-  .open-menu {
-    display: none;
-  }
-
-}*/
 
 @media screen and (min-width: 450px) {
   .header__logo-container {
