@@ -1,15 +1,16 @@
 // jQuery IIFE to reduce risk of conflict with other libraries
 (function($, window, document){
+  // add hamburger menu content dynamically, to reduce impact on screen readers
+  var hamburgerMenuContent = '<div class="nav__toggle hide">'+
+    '<button class="open-menu">&#9776;</button>'+
+    '<button class="close-menu hide">&#735;</button>'+
+    '</div><!--.nav__toggle-->';
+  $('.nav__list').before(hamburgerMenuContent);
+
   // capture viewport width
   var viewportWidth = $(window).innerWidth();
 
   function hamburgerMenu(vw){
-    // add hamburger menu content dynamically, to reduce impact on screen readers
-    var hamburgerMenuContent = '<div class="nav__toggle hide">'+
-      '<button class="open-menu">&#9776;</button>'+
-      '<button class="close-menu hide">&#735;</button>'+
-      '</div><!--.nav__toggle-->';
-    $('.nav__list').before(hamburgerMenuContent);
     if(vw < 381){
       $('.nav__toggle').removeClass('hide');
       $('.nav__list').addClass('hide');
