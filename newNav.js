@@ -4,8 +4,8 @@
   var viewportWidth = $(window).innerWidth();
 
   // Checks viewport width
-  (function hamburgerMenu(viewportWidth){
-    if(viewportWidth < 381){
+  function hamburgerMenu(vw){
+    if(vw < 381){
       // add icons if less equal to or less than 380px
       var hamburgerMenuContent = '<div class="nav__toggle">'+
         '<button class="open-menu">&#9776;</button>'+
@@ -24,5 +24,18 @@
         $('button.close-menu').addClass('hide');
       })
     };
-  })(viewportWidth);
+  };
+  hamburgerMenu(viewportWidth);
+
+  // Add menu after viewport change, using [CSS Tricks Tip](https://css-tricks.com/snippets/jquery/done-resizing-event/) to ensure only one resize fired
+  var resizeTimer;
+
+  $(window).on('resize', function(e){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      viewportWidth = $(window).innerWidth();
+      hamburgerMenu(viewportWidth);
+      console.log(viewportWidth);
+    }, 250);
+  });
 }(window.jQuery, window, document));
