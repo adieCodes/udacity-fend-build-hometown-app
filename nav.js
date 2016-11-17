@@ -1,63 +1,44 @@
-var viewWidth = $(window).width();
+// jQuery IIFE to reduce risk of conflict
+(function($, window, document){
+  // capture viewport width
+  var viewportWidth = $(window).innerWidth();
 
-// code stolen from [Stack Overflow](http://stackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed)
-
-/*var waitForFinalEvent = (function () {
-  var timers = {};
-  return function (callback, ms, uniqueId) {
-    if (!uniqueId) {
-      uniqueId = "Don't call this twice without a uniqueId";
-    }
-    if (timers[uniqueId]) {
-      clearTimeout (timers[uniqueId]);
-    }
-    timers[uniqueId] = setTimeout(callback, ms);
-  };
-})();
-
-$(window).resize(function(){
-  waitForFinalEvent(function(){
-    viewWidth = $(window).width();
-    responsiveMenu(viewWidth);
-  }, 500, "some unique string")
-});*/
-
-// Code stolen from [CSS Tricks](https://css-tricks.com/snippets/jquery/done-resizing-event/)
-
-var resizeTimer;
-
-$(window).on('resize', function(e) {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function(){
-    viewWidth = $(window).innerWidth();
-    responsiveMenu(viewWidth);
-  }, 250);
-})
-
-function responsiveMenu(viewWidth){
-  if(viewWidth <= 380) {
-    $(".close-menu" ).hide();
-    $(".nav__list" ).hide();
-    $(".nav__toggle").show();
-    $(".open-menu" ).click(function() {
-      $(".nav__list" ).slideToggle( "slow", function() {
-        $(".open-menu" ).hide();
-        $(".close-menu" ).show();
+  // Checks viewport width
+  function hamburgerMenu(vw){
+    if(vw < 381){
+      // add icons if less equal to or less than 380px
+      var hamburgerMenuContent = '<div class="nav__toggle">'+
+        '<button class="open-menu">&#9776;</button>'+
+        '<button class="close-menu hide">&#735;</button>'+
+        '</div><!--.nav__toggle-->';
+      $('.nav__list').before(hamburgerMenuContent);
+      $('.nav__list').addClass('hide');
+      $('.open-menu').on('click', function(){
+        $('.nav__list').removeClass('hide');
+        $('button.open-menu').addClass('hide');
+        $('button.close-menu').removeClass('hide');
       });
-    });
-  } else {
-    $(".nav__toggle").hide();
-    $(".nav__list").show();
+      $('.close-menu').click(function(){
+        $('.nav__list').addClass('hide');
+        $('button.open-menu').removeClass('hide');
+        $('button.close-menu').addClass('hide');
+      })
+    } else{
+      $('.nav__toggle').hide();
+      $('.nav__list').removeClass('hide');
+    }
   };
-};
+  hamburgerMenu(viewportWidth);
 
-$(".close-menu" ).click(function() {
-  $(".nav__list" ).slideToggle( "slow", function() {
-    $(".close-menu" ).hide();
-    $(".open-menu" ).show();
+  // Add menu after viewport change, using [CSS Tricks Tip](https://css-tricks.com/snippets/jquery/done-resizing-event/) to ensure only one resize fired
+  var resizeTimer;
+
+  $(window).on('resize', function(e){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      viewportWidth = $(window).innerWidth();
+      hamburgerMenu(viewportWidth);
+      console.log(viewportWidth);
+    }, 250);
   });
-});
-
-$(document).ready(function(){
-  responsiveMenu(viewWidth);
-})
+}(window.jQuery, window, document));
