@@ -23,7 +23,10 @@
         $('button.open-menu').removeClass('hide');
         $('button.close-menu').addClass('hide');
       })
-    };
+    } else{
+      $('.nav__toggle').hide();
+      $('.nav__list').removeClass('hide');
+    }
   };
   hamburgerMenu(viewportWidth);
 
